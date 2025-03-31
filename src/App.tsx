@@ -9,6 +9,7 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import { Services } from "./components/Services";
 import { Sponsors } from "./components/Sponsors";
 import { Team } from "./components/Team";
+import { Preliminary } from "./components/Preliminary";
 // import { Testimonials } from "./components/Testimonials";
 import "./App.css";
 
@@ -33,6 +34,7 @@ function App() {
             </>
           }
         />
+        <Route path="/preliminary" element={<Preliminary />} />
       </Routes>
     </Router>
   );

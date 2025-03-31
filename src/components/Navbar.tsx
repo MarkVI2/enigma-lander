@@ -16,6 +16,7 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
+import { Link } from "react-router-dom";
 
 interface RouteProps {
   href: string;
@@ -39,6 +40,10 @@ const routeList: RouteProps[] = [
     href: "#faq",
     label: "FAQ",
   },
+  {
+    href: "/preliminary",
+    label: "418 Screening",
+  },
 ];
 
 export const Navbar = () => {
@@ -53,7 +58,11 @@ export const Navbar = () => {
               href="/"
               className="ml-2 font-bold text-xl flex items-center"
             >
-              <img src="https://i.ibb.co/0mN0h4n/icon-trans.png" alt="Logo" className="h-10 w-10 mr-2" />
+              <img
+                src="https://i.ibb.co/0mN0h4n/icon-trans.png"
+                alt="Logo"
+                className="h-10 w-10 mr-2"
+              />
               Enigma
             </a>
           </NavigationMenuItem>
@@ -62,10 +71,7 @@ export const Navbar = () => {
           <span className="flex md:hidden">
             <ModeToggle />
 
-            <Sheet
-              open={isOpen}
-              onOpenChange={setIsOpen}
-            >
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu
                   className="flex md:hidden h-5 w-5"
@@ -77,9 +83,7 @@ export const Navbar = () => {
 
               <SheetContent side={"left"}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
-                    Enigma
-                  </SheetTitle>
+                  <SheetTitle className="font-bold text-xl">Enigma</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
@@ -111,18 +115,30 @@ export const Navbar = () => {
 
           {/* desktop */}
           <nav className="hidden md:flex gap-2">
-            {routeList.map((route: RouteProps, i) => (
-              <a
-                rel="noreferrer noopener"
-                href={route.href}
-                key={i}
-                className={`text-[17px] ${buttonVariants({
-                  variant: "ghost",
-                })}`}
-              >
-                {route.label}
-              </a>
-            ))}
+            {routeList.map((route: RouteProps, i) =>
+              route.href.startsWith("#") ? (
+                <a
+                  rel="noreferrer noopener"
+                  href={route.href}
+                  key={i}
+                  className={`text-[17px] ${buttonVariants({
+                    variant: "ghost",
+                  })}`}
+                >
+                  {route.label}
+                </a>
+              ) : (
+                <Link
+                  to={route.href}
+                  key={i}
+                  className={`text-[17px] ${buttonVariants({
+                    variant: "ghost",
+                  })}`}
+                >
+                  {route.label}
+                </Link>
+              )
+            )}
           </nav>
 
           <div className="hidden md:flex gap-2">

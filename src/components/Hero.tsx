@@ -10,36 +10,28 @@ export const Hero = () => {
       <div className="text-center lg:text-start space-y-6">
         <Badge variant="outline" className="text-sm py-2">
           <span className="mr-2 text-primary">
-            <Badge variant="live">Live</Badge>
+            <Badge variant="upcoming">Upcoming</Badge>
           </span>
-          <img
-            src="https://pbs.twimg.com/profile_images/1831003149072535554/leInyk8A_400x400.jpg"
-            alt="Hacktoberfest 2024"
-            className="h-6 w-auto mr-2"
-          />
-          Hacktoberfest 2024
+          418 Hackathon
           <span className="ml-2">
-            <a href="https://hacktoberfest.com/" target="_blank" rel="noopener noreferrer">
-              <Badge variant="secondary">Find out more</Badge>
+            <a
+              href="https://mu-enigma.org/preliminary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Badge variant="secondary">Prelim round</Badge>
             </a>
           </span>
         </Badge>
         <main className="text-5xl md:text-6xl font-bold">
-          <h1 className="inline">
-            
-              We are
-          </h1>{" "}
-          {" "}
+          <h1 className="inline">We are</h1>{" "}
           <h2 className="inline">
             <span className="inline bg-gradient-to-r from-[#D247BF] to-primary text-transparent bg-clip-text">
               Enigma
             </span>{" "}
           </h2>
           <h3 className="text-4xl">
-            We are {" "}
-            <span className="inline bg-clip-text">
-              Computer Science
-            </span>{" "}
+            We are <span className="inline bg-clip-text">Computer Science</span>{" "}
           </h3>
         </main>
 
