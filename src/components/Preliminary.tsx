@@ -212,7 +212,7 @@ export const Preliminary = () => {
           name: participant.name,
           teamName: participant.teamName,
           answers,
-          score: (scoreToSubmit / csQuestions.length) * 100,
+          score: scoreToSubmit,
           quizAttempted: true,
           completedAt,
           updatedAt: completedAt,
