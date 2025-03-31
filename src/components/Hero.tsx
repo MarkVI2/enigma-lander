@@ -3,6 +3,7 @@ import { buttonVariants } from "./ui/button";
 import { HeroCards } from "./HeroCards";
 import { DiscordLogoIcon } from "@radix-ui/react-icons";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -14,9 +15,9 @@ export const Hero = () => {
           </span>
           418 Hackathon
           <span className="ml-2">
-            <a href="/preliminary" target="_blank" rel="noopener noreferrer">
+            <Link to="/preliminary">
               <Badge variant="secondary">Prelim round</Badge>
-            </a>
+            </Link>
           </span>
         </Badge>
         <main className="text-5xl md:text-6xl font-bold">
