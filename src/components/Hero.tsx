@@ -14,11 +14,7 @@ export const Hero = () => {
           </span>
           418 Hackathon
           <span className="ml-2">
-            <a
-              href="https://mu-enigma.org/preliminary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="/preliminary" target="_blank" rel="noopener noreferrer">
               <Badge variant="secondary">Prelim round</Badge>
             </a>
           </span>
